@@ -99,6 +99,9 @@ set cmdheight=2
 " A buffer becomes hidden when it is abandoned
 set hid
 
+" Press space to clear search highlighting and any message already displayed.
+nnoremap <silent> <Space> :silent noh<Bar>echo<CR>
+
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
