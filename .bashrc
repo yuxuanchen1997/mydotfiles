@@ -114,6 +114,7 @@ alias vi='vim'
 alias svi='sudo vi'
 alias vis='vim "+set si"'
 alias cloud="ssh yuxuan@cloud.cs.yuxuanlabs.com -p28381"
+alias e='emacs'
 
 # Change directory aliases
 alias home='cd ~'
@@ -684,3 +685,4 @@ function __setprompt
 	PS4='\[${DARKGRAY}\]+\[${NOCOLOR}\] '
 }
 PROMPT_COMMAND='__setprompt'
+
