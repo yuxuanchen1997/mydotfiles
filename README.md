@@ -1,7 +1,10 @@
 # My dotFiles
-My Linux dotFiles
+My Linux dotFiles  
 
-I prefer to use this colorscheme along with Solarized and the GNOME desktop environment.
+## How to install
+    wget https://raw.githubusercontent.com/yuxuanchen1997/mydotfiles/master/install.sh | sh
+
+I prefer to use this colorscheme along with Solarized.
 
 Simply download and replace yours and they will work!
 
