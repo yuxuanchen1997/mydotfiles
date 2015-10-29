@@ -2,7 +2,7 @@
 My Linux dotFiles  
 
 ## How to install
-    wget https://raw.githubusercontent.com/yuxuanchen1997/mydotfiles/master/install.sh | sh
+    bash << wget https://raw.githubusercontent.com/yuxuanchen1997/mydotfiles/master/install.sh
 
 I prefer to use this colorscheme along with Solarized.
 
