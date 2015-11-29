@@ -1,6 +1,11 @@
 #!/bin/bash
 iatest=$(expr index "$-" i)
 
+# Customized Compiler Settings
+export CC=gcc
+export CFLAGS="-std=c99 -O2 -Wall"
+export LDLIBS="-lm"
+
 #######################################################
 # SOURCED ALIAS'S AND SCRIPTS
 #######################################################
