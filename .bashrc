@@ -3,7 +3,8 @@ iatest=$(expr index "$-" i)
 
 # Customized Compiler Settings
 export CC=gcc
-export CFLAGS="-std=c99 -O2 -Wall"
+export CFLAGS="-std=c11 -O2 -Wall"
+export CXXFLAGS="-std=c++11 -O2 -Wall"
 export LDLIBS="-lm"
 
 #######################################################
