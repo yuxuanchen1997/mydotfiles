@@ -436,3 +436,7 @@ function! <SID>BufcloseCloseIt()
      execute("bdelete! ".l:currentBufNum)
    endif
 endfunction
+
+if has("gui_running")
+    set guifont=Liberation\ Mono\ 12
+endif
