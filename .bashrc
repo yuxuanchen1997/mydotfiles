@@ -122,7 +122,7 @@ alias svi='sudo vi'
 alias vis='vim "+set si"'
 alias cloud="ssh yuxuan@cloud.cs.yuxuanlabs.com -p28381"
 alias e='emacs'
-
+alias sshdata="ssh chen1797@data.cs.purdue.edu"
 # Change directory aliases
 alias home='cd ~'
 alias cd..='cd ..'
@@ -603,72 +603,18 @@ function __setprompt
 
 	# Show error exit code if there is one
 	if [[ $LAST_COMMAND != 0 ]]; then
-		# PS1="\[${RED}\](\[${LIGHTRED}\]ERROR\[${RED}\])-(\[${LIGHTRED}\]Exit Code \[${WHITE}\]${LAST_COMMAND}\[${RED}\])-(\[${LIGHTRED}\]"
-		PS1="\[${DARKGRAY}\](\[${LIGHTRED}\]ERROR\[${DARKGRAY}\])-(\[${RED}\]Exit Code \[${LIGHTRED}\]${LAST_COMMAND}\[${DARKGRAY}\])-(\[${RED}\]"
-		if [[ $LAST_COMMAND == 1 ]]; then
-			PS1+="General error"
-		elif [ $LAST_COMMAND == 2 ]; then
-			PS1+="Missing keyword, command, or permission problem"
-		elif [ $LAST_COMMAND == 126 ]; then
-			PS1+="Permission problem or command is not an executable"
-		elif [ $LAST_COMMAND == 127 ]; then
-			PS1+="Command not found"
-		elif [ $LAST_COMMAND == 128 ]; then
-			PS1+="Invalid argument to exit"
-		elif [ $LAST_COMMAND == 129 ]; then
-			PS1+="Fatal error signal 1"
-		elif [ $LAST_COMMAND == 130 ]; then
-			PS1+="Script terminated by Control-C"
-		elif [ $LAST_COMMAND == 131 ]; then
-			PS1+="Fatal error signal 3"
-		elif [ $LAST_COMMAND == 132 ]; then
-			PS1+="Fatal error signal 4"
-		elif [ $LAST_COMMAND == 133 ]; then
-			PS1+="Fatal error signal 5"
-		elif [ $LAST_COMMAND == 134 ]; then
-			PS1+="Fatal error signal 6"
-		elif [ $LAST_COMMAND == 135 ]; then
-			PS1+="Fatal error signal 7"
-		elif [ $LAST_COMMAND == 136 ]; then
-			PS1+="Fatal error signal 8"
-		elif [ $LAST_COMMAND == 137 ]; then
-			PS1+="Fatal error signal 9"
-		elif [ $LAST_COMMAND -gt 255 ]; then
-			PS1+="Exit status out of range"
-		else
-			PS1+="Unknown error code"
-		fi
-		PS1+="\[${DARKGRAY}\])\[${NOCOLOR}\]\n"
-	else
-		PS1=""
+        printf "${DARKGRAY}-LAST COMMAND ${LIGHTRED}EXIT CODE ${RED}${LAST_COMMAND}\n"
 	fi
-
-	# Date
-	PS1+="\[${DARKGRAY}\](\[${CYAN}\]\$(date +%a) $(date +%b-'%-m')" # Date
-	PS1+="${BLUE} $(date +'%-I':%M:%S%P)\[${DARKGRAY}\])-" # Time
-
-	# CPU
-	PS1+="(\[${MAGENTA}\]CPU $(cpu)%"
-
-	# Jobs
-	PS1+="\[${DARKGRAY}\]:\[${MAGENTA}\]\j"
-
-	# Network Connections (for a server - comment out for non-server)
-	PS1+="\[${DARKGRAY}\]:\[${MAGENTA}\]Net $(awk 'END {print NR}' /proc/net/tcp)"
-
-	PS1+="\[${DARKGRAY}\]):"
     
-	# User and server
-	local SSH_IP=`echo $SSH_CLIENT | awk '{ print $1 }'`
-	local SSH2_IP=`echo $SSH2_CLIENT | awk '{ print $1 }'`
-	if [ $SSH2_IP ] || [ $SSH_IP ] ; then
-        PS1+="(\[${RED}\]\u@\h\[${DARKGREY}\]"
-	else
-        PS1+="(\[${RED}\]\u\[${DARKGREY}\]"
-	fi
-    PS1+="\[${DARKGRAY}\])"
+    PS1=""
+	#local SSH2_IP=`echo $SSH2_CLIENT | awk '{ print $1 }'`
+	#if [ $SSH2_IP ] || [ $SSH_IP ] ; then
+        PS1+="\[${BLUE}\]\u\[${DARKGRAY}\]@\[${CYAN}\]\h"
+	#else
+    #    PS1+="\[${GREEN}\]\u"
+	#fi
 	# Current directory
-    PS1+="\n\[${DARKGRAY}\](\[${BROWN}\]\w\[${DARKGRAY}\]) "
+    PS1+="\[${DARKGRAY}\]:\[${MAGENTA}\]\w "
 
 	# Total size of files in current directory
 	#PS1+="(\[${GREEN}\]$(/bin/ls -lah | /bin/grep -m 1 total | /bin/sed 's/total //')\[${DARKGRAY}\]:"
@@ -677,9 +623,9 @@ function __setprompt
 	#PS1+="\[${GREEN}\]\$(/bin/ls -A -1 | /usr/bin/wc -l)\[${DARKGRAY}\])"
 
 	if [[ $EUID -ne 0 ]]; then
-		PS1+="\[${GREEN}\]>\[${NOCOLOR}\] " # Normal user
+		PS1+="\[${BLUE}\]%\[${NOCOLOR}\] " # Normal user
 	else
-		PS1+="\[${RED}\]>\[${NOCOLOR}\] " # Root user
+		PS1+="\[${RED}\]#\[${NOCOLOR}\] " # Root user
 	fi
 
 	# PS2 is used to continue a command using the \ character
