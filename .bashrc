@@ -118,11 +118,10 @@ alias cls='clear'
 alias multitail='multitail --no-repeat -c'
 alias freshclam='sudo freshclam'
 alias vi='vim'
+alias gvi='gvim'
 alias svi='sudo vi'
 alias vis='vim "+set si"'
-alias cloud="ssh yuxuan@cloud.cs.yuxuanlabs.com -p28381"
 alias e='emacs'
-alias sshdata="ssh chen1797@data.cs.purdue.edu"
 # Change directory aliases
 alias home='cd ~'
 alias cd..='cd ..'
