@@ -153,10 +153,6 @@ set foldcolumn=1
 " Enable syntax highlighting
 syntax enable 
 
-try
-    colorscheme desert
-catch
-endtry
 
 set background=dark
 
@@ -439,4 +435,8 @@ endfunction
 
 if has("gui_running")
     set guifont=Liberation\ Mono\ 12
+    try
+        colorscheme desert
+    catch
+    endtry
 endif
