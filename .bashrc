@@ -1,4 +1,7 @@
 #!/bin/bash
+# The Ultimate Bashrc file
+# Maintained by Yuxuan Chen
+
 iatest=$(expr index "$-" i)
 
 # Customized Compiler Settings
