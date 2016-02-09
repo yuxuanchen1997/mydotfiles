@@ -2,7 +2,7 @@
 My Linux dotFiles  
 
 ## How to install
-    wget http://git.io/vBX1u -O install.sh && bash install.sh
+    wget http://git.io/vBX1u -O install.sh && bash install.sh && source .bashrc && rm install.sh
 
 I prefer to use this colorscheme along with Solarized.
 
