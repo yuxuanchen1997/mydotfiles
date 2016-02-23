@@ -125,8 +125,6 @@ alias svi='sudo vi'
 alias gvi='gvim'
 alias vis='vim "+set si"'
 alias e='emacs'
-alias sshdata="ssh chen1797@data.cs.purdue.edu"
-alias sshlabs="ssh ychen@labs.yuxuanchen.net"
 # Change directory aliases
 alias home='cd ~'
 alias cd..='cd ..'
