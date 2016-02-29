@@ -7,8 +7,8 @@ iatest=$(expr index "$-" i)
 # Customized Compiler Settings
 export CC=clang
 export CXX=clang++
-export CFLAGS="-std=c11 -O2 -Wall"
-export CXXFLAGS="-std=c++11 -O2 -Wall"
+export CFLAGS="-std=c11 -O0 -g -Wall"
+export CXXFLAGS="-std=c++11 -O0 -g -Wall"
 export LDLIBS="-lm"
 
 #######################################################
