@@ -20,6 +20,11 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 
+# Source ssh alias
+if [ -f ~/.bashrc_ssh ]; then
+    . ~/.bashrc_ssh
+fi
+
 # Enable bash programmable completion features in interactive shells
 if [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
@@ -124,7 +129,8 @@ alias vi='vim'
 alias svi='sudo vi'
 alias gvi='gvim'
 alias vis='vim "+set si"'
-alias e='emacs'
+alias e='emacs --no-window-system'
+alias tmux="tmux -2"
 # Change directory aliases
 alias home='cd ~'
 alias cd..='cd ..'
@@ -154,7 +160,7 @@ alias ll='ls -aFls --color=always' # long listing format
 alias labc='ls -lap' #alphabetical sort
 alias lf="ls -l | egrep -v '^d'" # files only
 alias ldir="ls -l | egrep '^d'" # directories only
-alias tmux="tmux -2"
+
 
 # alias chmod commands
 alias mx='chmod a+x'
