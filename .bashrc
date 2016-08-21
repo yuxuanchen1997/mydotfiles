@@ -154,6 +154,7 @@ alias ll='ls -aFls --color=always' # long listing format
 alias labc='ls -lap' #alphabetical sort
 alias lf="ls -l | egrep -v '^d'" # files only
 alias ldir="ls -l | egrep '^d'" # directories only
+alias tmux="tmux -2"
 
 # alias chmod commands
 alias mx='chmod a+x'
